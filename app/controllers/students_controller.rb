@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
     experiences = 
 
     educations = 
-    student = Unirest.patch("http://localhost:3000/api/v1/resume/#{current_user.id}", parameters: {phone_number: params[:phone_number], {company_name: params[:company_name]} }).body
+    student = Unirest.patch("http://localhost:3000/api/v1/resume/#{current_user.id}", parameters: {phone_number: params[:phone_number],  {experiences: params[:experiences]} }).body
   end
 
 

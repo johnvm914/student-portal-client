@@ -2,23 +2,27 @@
 <h2>Contact Information</h2>
 
 <p> <%= @student["phone_number"] %> <input type="text" name="phone_number" value="<%= @student["phone_number"] %>"> </p> 
-<p> @student["linkedin_url" </p>      
-<p> @student["twitter_handle"] </p>      
-<p> @student["personal_website_url"] </p>      
-<p> @student["online_resume_url"] </p>      
-<p> @student["github_url"] </p>      
-<p> @student["photo"] </p>
+<p> <%= @student["email"] %> <input type="email" name="email" value="<%= @student["email
+"] %>">  </p> 
+<p> <%= @student["short_bio"] %> <input type="text" name="short_bio" value="<%= @student["short_bio
+"] %>"> </p>
+<p> <%= @student["linkedin_url"] %> <input type="text" name="linkedin_url" value="linkedin_url"></p>      
+<p> <%= @student["twitter_handle"] %> <input type="text" name="twitter_handle" value="twitter_handle"></p>      
+<p> <%= @student["personal_website_url"] %> <input type="text" name="personal_website_url" value="personal_website_url"></p>      
+<p> <%= @student["online_resume_url"] %> <input type="text" name="online_resume_url" value="online_resume_url"> </p>      
+<p> <%= @student["github_url"] %> <input type="text" name="github_url" value="github_url"></p>      
+<p> <%= @student["photo"] %> <input type="text" name="photo" value="photo"></p>
 
 <br>
 
 <h2>Experience</h2>  
   <% @student["experiences"].each do |experience| %>
     <input type="hidden" name="experience_id" value="experience['id']">
-    <p><%= experience["company_name"] %> <input type="text" name="company_name" value="<%= experience["company_name"] %>"> </p>
-    <p><%= experience["job_title"] %> <input type="text" name="job_title" value="<%= experience["job_title"] %>"> </p>
-    <p><%= experience["details"] %> <input type="text" name="details" value="<%= experience["details"] %>"> </p>
-    <p><%= experience["start_date"] %> <input type="text" name="start_date" value="<%= experience["start_date"] %>"> </p>
-    <p><%= experience["end_date"] %> <input type="text" name="end_date" value="<%= experience["end_date"] %>"> </p>
+    <p><%= experience["company_name"] %> <input type="text" name="experiences[][company_name]" value="<%= experience["company_name"] %>"> </p>
+    <p><%= experience["job_title"] %> <input type="text" name="experiences[][job_title]" value="<%= experience["job_title"] %>"> </p>
+    <p><%= experience["details"] %> <input type="text" name="experiences[][details]" value="<%= experience["details"] %>"> </p>
+    <p><%= experience["start_date"] %> <input type="text" name="experiences[][start_date]" value="<%= experience["start_date"] %>"> </p>
+    <p><%= experience["end_date"] %> <input type="text" name="experiences[][end_date]" value="<%= experience["end_date"] %>"> </p>
     <br>
   <% end %>
 <br>
