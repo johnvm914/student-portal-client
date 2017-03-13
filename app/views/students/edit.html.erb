@@ -1,0 +1,54 @@
+<% form_tag "/students", method: :patch do %>
+<h2>Contact Information</h2>
+
+<p> <%= @student["phone_number"] %> <input type="text" name="phone_number" value="<%= @student["phone_number"] %>"> </p> 
+<p> <%= @student["email"] %> <input type="email" name="email" value="<%= @student["email
+"] %>">  </p> 
+<p> <%= @student["short_bio"] %> <input type="text" name="short_bio" value="<%= @student["short_bio
+"] %>"> </p>
+<p> <%= @student["linkedin_url"] %> <input type="text" name="linkedin_url" value="linkedin_url"></p>      
+<p> <%= @student["twitter_handle"] %> <input type="text" name="twitter_handle" value="twitter_handle"></p>      
+<p> <%= @student["personal_website_url"] %> <input type="text" name="personal_website_url" value="personal_website_url"></p>      
+<p> <%= @student["online_resume_url"] %> <input type="text" name="online_resume_url" value="online_resume_url"> </p>      
+<p> <%= @student["github_url"] %> <input type="text" name="github_url" value="github_url"></p>      
+<p> <%= @student["photo"] %> <input type="text" name="photo" value="photo"></p>
+
+<br>
+
+<h2>Experience</h2>  
+  <% @student["experiences"].each do |experience| %>
+    <input type="hidden" name="experience_id" value="experience['id']">
+    <p><%= experience["company_name"] %> <input type="text" name="experiences[][company_name]" value="<%= experience["company_name"] %>"> </p>
+    <p><%= experience["job_title"] %> <input type="text" name="experiences[][job_title]" value="<%= experience["job_title"] %>"> </p>
+    <p><%= experience["details"] %> <input type="text" name="experiences[][details]" value="<%= experience["details"] %>"> </p>
+    <p><%= experience["start_date"] %> <input type="text" name="experiences[][start_date]" value="<%= experience["start_date"] %>"> </p>
+    <p><%= experience["end_date"] %> <input type="text" name="experiences[][end_date]" value="<%= experience["end_date"] %>"> </p>
+    <br>
+  <% end %>
+<br>
+<h2>Skills</h2>
+  <% @student["skills"].each do |skill| %>
+    <p> <%= skill["skill_name"] %> <input type="text" name="skills[][skill_name]" value="<%= skill["skill_name"] %>"></p>
+    <br>
+  <% end %>
+<br>
+<h2>Educations</h2>
+  <% @student["educations"].each do |education| %>
+    <p> <%= education["start_date"] %> <input type="text" name="educations[][start_date]" value="<%= education["start_date"] %>"> </p>
+    <p> <%= education["end_date"] %> <input type="text" name="educations[][end_date]" value="<%= education["end_date"] %>"> </p>
+    <p> <%= education["degree"] %> <input type="text" name="educations[][degree]" value="<%= education["degree"] %>"></p>
+    <p> <%= education["university"] %> <input type="text" name="educations[][university]" value="<%= education["university"] %>"> </p>
+    <p> <%= education["details"] %> <input type="text" name="educations[][details]" value="<%= education["details"] %>"></p>
+    <br>
+  <% end %>
+<br>
+<h2>Capstone</h2>
+<% @student["capstones"].each do |capstone| %>
+    <p><%= capstone["name"] %> <input type="text" name="capstones[][name]" value="<%= capstone["name"] %>"> </p>
+    <p><%= capstone["description"] %> <input type="text" name="capstones[][description]" value="<%= capstone["description"] %>"></p>
+    <p><%= capstone["url"] %> <input type="text" name="capstones[][url]" value="<%= capstone["url"] %>"></p>   
+    <p><%= capstone["screenshot"] %> <input type="text" name="capstones[][screenshot]" value="<%= capstone["screenshot"] %>"></p>
+  <% end %>
+
+
+<% end %>
