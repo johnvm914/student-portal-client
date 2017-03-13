@@ -5,11 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = Unirest.get("http://localhost:3000/resume_api",
+    user = Unirest.post("http://localhost:3000/api/v1/login",
                         parameters: {email: params[:email], password: params[:password]}
                       ).body
     if user
-      session[:user_id] = user.id
+      session[:user_id] = user["id"]
       redirect_to "/"
     else
       redirect to "/login"
