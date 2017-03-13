@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
                       ).body
     if user
       session[:user_id] = user["id"]
-      redirect_to "/"
+      redirect_to "/students/#{user['id']}"
     else
       redirect to "/login"
     end
