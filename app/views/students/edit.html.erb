@@ -28,26 +28,26 @@
 <br>
 <h2>Skills</h2>
   <% @student["skills"].each do |skill| %>
-    <p> <%= skill["skill_name"] %> <input type="text" name="skill_name" value="<%= skill["skill_name"] %>"></p>
+    <p> <%= skill["skill_name"] %> <input type="text" name="skills[][skill_name]" value="<%= skill["skill_name"] %>"></p>
     <br>
   <% end %>
 <br>
 <h2>Educations</h2>
   <% @student["educations"].each do |education| %>
-    <p> <%= education["start_date"] %> <input type="text" name="start_date" value="<%= education["start_date"] %>"> </p>
-    <p> <%= education["end_date"] %> <input type="text" name="end_date" value="<%= education["end_date"] %>"> </p>
-    <p> <%= education["degree"] %> <input type="text" name="degree" value="<%= education["degree"] %>"></p>
-    <p> <%= education["university"] %> <input type="text" name="university" value="<%= education["university"] %>"> </p>
-    <p> <%= education["details"] %> <input type="text" name="details" value="<%= education["details"] %>"></p>
+    <p> <%= education["start_date"] %> <input type="text" name="educations[][start_date]" value="<%= education["start_date"] %>"> </p>
+    <p> <%= education["end_date"] %> <input type="text" name="educations[][end_date]" value="<%= education["end_date"] %>"> </p>
+    <p> <%= education["degree"] %> <input type="text" name="educations[][degree]" value="<%= education["degree"] %>"></p>
+    <p> <%= education["university"] %> <input type="text" name="educations[][university]" value="<%= education["university"] %>"> </p>
+    <p> <%= education["details"] %> <input type="text" name="educations[][details]" value="<%= education["details"] %>"></p>
     <br>
   <% end %>
 <br>
 <h2>Capstone</h2>
 <% @student["capstones"].each do |capstone| %>
-    <p><%= capstone["name"] %> <input type="text" name="name" value="<%= capstone["name"] %>"> </p>
-    <p><%= capstone["description"] %> <input type="text" name="description" value="<%= capstone["description"] %>"></p>
-    <p><%= capstone["url"] %> <input type="text" name="url" value="<%= capstone["url"] %>"></p>   
-    <p><%= capstone["screenshot"] %> <input type="text" name="screenshot" value="<%= capstone["screenshot"] %>"></p>
+    <p><%= capstone["name"] %> <input type="text" name="capstones[][name]" value="<%= capstone["name"] %>"> </p>
+    <p><%= capstone["description"] %> <input type="text" name="capstones[][description]" value="<%= capstone["description"] %>"></p>
+    <p><%= capstone["url"] %> <input type="text" name="capstones[][url]" value="<%= capstone["url"] %>"></p>   
+    <p><%= capstone["screenshot"] %> <input type="text" name="capstones[][screenshot]" value="<%= capstone["screenshot"] %>"></p>
   <% end %>
 
 
